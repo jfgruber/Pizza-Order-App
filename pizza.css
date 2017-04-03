@@ -1,0 +1,22 @@
+body {
+    background-color: darkred;
+    color: dodgerblue;
+}
+
+
+/*JAVASCRIPT CSS ONLY, DO NOT CHANGE!!*/
+span {
+    color: red;
+}
+.other {
+    display: none;
+}
+.other-visable {
+    display: block;
+}
+.billOther {
+    display: none;
+}
+.billOther-visable {
+    display: block;
+}

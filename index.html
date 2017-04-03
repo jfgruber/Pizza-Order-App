@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tailgate Pizza Order</title>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+</script>
+<script src="script.js"></script>
+<link rel="stylesheet" href="pizza.css">
+
+</head>
+<body>
+     <div class="container">
+      <div class="header clearfix">
+
+        <h3 class="text-muted">Let's Order a Pizza!</h3>
+      </div>
+
+      <header class="jumbotron">
+        <h1>Tailgate Pizza Fast Delivery!</h1>
+        <p class="lead">Graphic will go here</p>
+        <p></p>
+      </header>
+      <section>
+          <form>
+           <h2>Delivery Address</h2>
+           <p>Fields with an astric are required</p>
+            <label for="strcustname">Name:</label><br>  
+            <input type="text" name="strcustname" id="strcustname">
+            <span id = "strcustname_error">*</span><br>
+            
+            <label>Address Type:</label><br>  
+            <select  name="straddrtype" id="straddrtype">
+                <option>Please select the Type of Address</option>
+                <option>House</option>
+                <option>Apartment</option>
+                <option>Business</option>
+                <option>Campus</option>
+                <option>Hotel</option>
+                <option>Dorm</option>
+                <option>Other</option>
+            </select>
+                
+            <span id = "straddrtype_error">*</span><br>
+            
+            <label for="strotheraddr" class="other">Other Address Type:</label><br>  
+            <input type="text" name="strotheraddr" class="other" id="strotheraddr">
+            <span class="other" id = "strotheraddr_error">*</span><br>
+            
+            <label for="straddr1">Address:</label> <br> 
+            <input type="text" name="straddr1" id="straddr1">
+            <span id = "straddr1_error">*</span>            
+            <label for="intapt">Apt/Rm/Bldg Number:</label>  
+            <input type="text" name="intapt" id="intapt"><br>
+            <label for="strcity">City:</label>  
+            <input type="text" name="strcity" id="strcity">
+            <span id = "strcity_error">*</span>
+            <label for="strstate">State:</label>  
+            <input type="text" name="strstate" id="strstate">
+            <span id = "strstate_error">*</span>
+            <label for="intzip">Zip Code:</label>  
+            <input type="text" name="intzip" id="intzip">
+            <span id ="intzip_error">*</span><br>
+            
+            <label for="intphone">Phone Number:</label><br>
+            <p>Format is xxx-xxx-xxxx</p>  
+            <input type="text" name="intphone" id="intphone"><br>
+            <span id ="intphone_error">*</span><br>
+            
+            <label for="stremail">Email:</label><br>  
+            <input type="text" name="stremail" id="stremail"><br>
+            <span id ="stremail_error">*</span><br>
+            
+            <h2>Pizza Options</h2>
+            
+            <label for="intistotal">Subtotal:</label><br>  
+            <input type="text" name="intistotal" id="intistotal" readonly><br>
+            
+            <h4>Note: You must select a crust to continue</h4>
+            <label for="strdough">Crust:</label><br>              
+            <input type="radio" name="strdough" id="strhandtoss">Hand Tossed <br>
+            <input type="radio" name="strdough" id="strthincrust">Thin Crust<br>
+            <input type="radio" name="strdough" id="strnystyle">New York Style<br>
+            <input type="radio" name="strdough" id="strglutenfree">Gluten Free<br>
+            
+            <label for="strdsize">Pizza Size:</label><br>  
+            <select  name="strdsize" id="strdsize" disabled>
+                <option>Please select the Pizza Size</option>
+            </select><br>
+            <span id ="strdsize_error">*</span><br>
+<!--                YOU ARE GOING TO HAVE TO CREATE THE IDS DYNAMICALLY TOO!-->
+                
+            <label for="strcheese">Say Cheese:</label><br>  
+            <select  name="strcheese" id="strcheese" disabled>
+                <option>Normal (default): no charge</option>
+                <option>Light: no charge</option>
+                <option>Extra: +$2.99</option>
+                <option>Double: +$3.99</option>
+            </select><br>
+                
+                <label for="strsauce">Sauces:</label><br>  
+            <select  name="strsauce" id="strsauce" disabled>
+                <option>Regular Tomato: no charge</option>
+                <option>Hearty Tomato: +$.99</option>
+                <option>BBQ Sauce: +$1.99</option>
+            </select><br>
+            
+            <label>Toppings:</label><br>  
+            <input type="checkbox" name="boolpepperoni" id="boolpepperoni" value="Pepperoni" disabled>Pepperoni<br>
+            <input type="checkbox" name="boolsausage" id="boolsausage" value="Sausage" disabled>Sausage<br>
+            <input type="checkbox" name="boolham" id="boolham" value="Ham"  disabled>Ham<br>
+            <input type="checkbox" name="boolbacon" id="boolbacon" value="Bacon"  disabled>Bacon<br>
+            <input type="checkbox" name="boolsalami" id="boolsalami" value="Salami"  disabled>Salami<br>
+            <input type="checkbox" name="boolpeppers" id="boolpeppers" value="Peppers"  disabled>Peppers<br>
+            <input type="checkbox" name="boololives" id="boololives" value="Olives"  disabled>Olives<br>
+            <input type="checkbox" name="booljalapenos" id="booljalapenos" value="Jalapeños"  disabled>Jalapeños<br>
+            <input type="checkbox" name="boolmushrooms" id="boolmushrooms" value="Mushrooms"  disabled>Mushrooms<br>
+            <input type="checkbox" name="boolpineapple" id="boolpineapple" value="Pineapple"  disabled>Pineapple<br>
+            <input type="checkbox" name="boolonion" id="boolonion" value="Onion"  disabled>Onion<br>
+            <input type="button" id="btncheckordr" value="Finished Building Pizza" disabled>
+            
+            
+             <h2 id="billing">Billing Address</h2>
+             
+             <input type="checkbox" name="addrissame" id="addrissame">Billing address is the same as delivery address?<br>
+             
+           <p>Fields with an astric are required</p>
+            <label for="strbcustname">Name:</label><br>  
+            <input type="text" name="strbcustname" id="strbcustname">
+            <span id = "strbcustname_error">*</span><br>
+            
+            <label for="strbaddrtype">Address Type:</label><br>  
+            <select  name="strbaddrtype" id="strbaddrtype">
+                <option>Please select the Type of Address</option>
+                <option>House</option>
+                <option>Apartment</option>
+                <option>Business</option>
+                <option>Campus</option>
+                <option>Hotel</option>
+                <option>Dorm</option>
+                <option>Other</option>
+            </select>
+                
+            <span id = "strbaddrtype_error">*</span><br>
+            
+            <label for="strbotheraddr" class="billOther">Other Address Type:</label><br>  
+            <input type="text" name="strbotheraddr" class="billOther" id="strbotheraddr">
+            <span class="billOther" id = "strbotheraddr_error">*</span><br>
+            
+            <label for="strbaddr1">Address:</label> <br> 
+            <input type="text" name="strbaddr1" id="strbaddr1">
+            <span id = strbaddr1_error>*</span><br>
+            
+            <label for="intbapt">Apt/Rm/Bldg Number:</label>  
+            <input type="text" name="intbapt" id="intbapt">
+            <label for="strbcity">City:</label>  
+            <input type="text" name="strbcity" id="strbcity">
+            <span id = "strbcity_error">*</span>
+            <label for="strbstate">State:</label>  
+            <input type="text" name="strbstate" id="strbstate">
+            <span id ="strbstate_error">*</span>
+            <label for="intbzip">Zip Code:</label>  
+            <input type="text" name="intbzip" id="intbzip">
+            <span id ="intbzip_error">*</span><br>
+            
+            <label for="intbphone">Phone Number:</label><br>
+            <p>Format is xxx-xxx-xxxx</p>  
+            <input type="text" name="intbphone" id="intbphone"><br>
+            <span id ="intbphone_error">*</span><br>
+            
+            <label for="strbemail">Email:</label><br>  
+            <input type="text" name="strbemail" id="strbemail"><br>
+            <span id ="strbemail_error">*</span><br>
+            
+                <label for="intccard">Credit Card:</label><br>  
+            <input type="text" name="intccard" id="intccard"><br>
+            <span id ="intccard_error">*</span><br>
+            
+            <label for="intcvc">CVC Number:</label>
+            <input type="text" name="intcvc" id="intcvc">
+            <span id ="intcvc_error">*</span>
+            <label for="datemonth">Exp Month:</label>
+            <select name="datemonth" id="datemonth">
+                <option>Date</option>
+                <option>Jan</option>
+                <option>Feb</option>
+                <option>Mar</option>
+                <option>Apr</option>
+                <option>May</option>
+                <option>Jun</option>
+                <option>Jul</option>
+                <option>Aug</option>
+                <option>Sep</option>
+                <option>Oct</option>
+                <option>Nov</option>
+                <option>Dec</option>
+            </select>
+            <span id ="datemonth_error">*</span>
+            <label for="dateyear">Exp Year:</label>
+            <select  name="dateyear" id="dateyear">
+                <option>Year</option>
+                <option>2017</option>
+                <option>2018</option>
+                <option>2019</option>
+                <option>2020</option>
+                <option>2020</option>
+                <option>2021</option>
+                <option>2022</option>
+                <option>2023</option>
+                <option>2024</option>
+                <option>2025</option>
+            </select>
+            <span id ="dateyear_error">*</span><br>
+            <h3 id="strcardtype">&nbsp;</h3><br>
+            
+            <button id="placeorder">Place Order</button>
+          </form>
+      </section>
+     
+      <footer class="footer">
+        <p>&copy; 2017 Tailgate Pizza, Inc.</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+</body>
+</html>
