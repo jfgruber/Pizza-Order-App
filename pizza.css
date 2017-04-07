@@ -1,12 +1,44 @@
+
+.spacing {
+    margin: 20px 0px 20px 0px; 
+}
+.subtotal {
+    font-size: 1.6em;
+    color: red;
+    font-weight: 600;
+}
+.yellow, h1, h2, h3, p, option, label {
+    color: yellow;
+}
 body {
-    background-color: darkred;
-    color: dodgerblue;
+    background: black url("images/Tailgate.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    color:dodgerblue;
+    
+}
+.footer {
+    padding: 30px;
 }
 
+input, option {
+    margin-bottom: 10px;
+}
+
+.logo h1 {
+     display: block;
+    float: right;
+}
+.logo img {
+    height: auto;
+    width: 100%;
+}
 
 /*JAVASCRIPT CSS ONLY, DO NOT CHANGE!!*/
 span {
-    color: red;
+    color:aqua;
+    font-weight: 600;
+    font-size: 1.4em;
 }
 .other {
     display: none;
