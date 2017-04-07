@@ -1,5 +1,5 @@
 //GLOBAL VARIABLES
-var strTotal = 0, dough, size = 0, sauce = 0, toppings = [], cheese = 0, month = [];
+var strTotal = 0, dough, size = 0, sauce = 0, toppings = [], cheese = 0, month = [], intErrorCount = 0;
 var Pricing = {
         handTossed: ["Please Select A Hand Tossed Size", "Small ($9.99)", "Medium ($12.99)", "Large ($14.99)"],
         handTossedPrice: [9.99, 12.99, 14.99],
@@ -14,17 +14,9 @@ var Pricing = {
         glutenFreePrice: [10.99]
     };
 
-//Hand Tossed 
-//Small ($9.99), Medium ($12.99), Large ($14.99)
-//Thin Crust
-// Medium ($11.99), Large ($13.99)
-//New York Style
-// Large ($16.99), Extra Large ($19.99)
-//Gluten Free 
-//Small ($10.99)
-
 //METHODS AND FUNCTIONS
 //addEventListener Method
+
    
 function EL(id) {
     "use strict";
@@ -59,6 +51,7 @@ function FieldValidate() {
     if (!isValue) {
         boolErr = true;
         strMessage = "This is a required field";
+       
     }
     if (arguments.length === 3 || arguments.length === 4) {
         strMessage = arguments[2];
@@ -73,6 +66,7 @@ function FieldValidate() {
     }
     if (boolErr) {
         errHandle.innerHTML = strMessage;
+        
     } else {
         errHandle.innerHTML = " ";
     }
@@ -250,7 +244,7 @@ window.addEventListener("load", function () {
     var strCustName = EL("strcustname");
     var strCustName_Error = EL("strcustname_error");
     strCustName.addEventListener("change", function () {
-        var nameRegEx, message = "Please your correct name";
+        var nameRegEx, message = "Please enter your correct name";
         nameRegEx = /\d/g;
         FieldValidate(strCustName_Error, this.value, message, nameRegEx);
     });
@@ -678,14 +672,20 @@ window.addEventListener("load", function () {
   
     //id = placeorder
      EL("placeorder").addEventListener("click", function () {
-         //Checking to see if any required field were skipped. Validation of data was done upon entry
+         // Validation of data was done upon entry
+         
+         
+         (intErrorCount)? window.alert("There seems to be errors in the order. Please check the information you entered"):
          window.alert("Thank You For Placing Your Order! Your Pizza is on its Way!!");
         });   
 
     
     //id = addrissame
     EL("addrissame").addEventListener("change", function () {
-            if(this.checked){               
+            if(this.checked){
+                if(intErrorCount){
+                    window.alert("Not all of the information is correct in Delivery Address. Please correct.")
+                }else{
                 strBCustName.value = strCustName.value;
                 strBillingAddr.value = strDelivAddr.value;
                 intBApt.value = intApt.value;
@@ -694,6 +694,7 @@ window.addEventListener("load", function () {
                 strBState.value = strState.value;
                 intBPhone.value = intPhone.value;
                 strBEmail.value = strEmail.value;
+                }
             }
         });
 });
